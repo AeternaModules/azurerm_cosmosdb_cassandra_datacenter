@@ -1,3 +1,7 @@
+output "cosmosdb_cassandra_datacenters_id" {
+  description = "Map of id values across all cosmosdb_cassandra_datacenters, keyed the same as var.cosmosdb_cassandra_datacenters"
+  value       = { for k, v in azurerm_cosmosdb_cassandra_datacenter.cosmosdb_cassandra_datacenters : k => v.id }
+}
 output "cosmosdb_cassandra_datacenters_availability_zones_enabled" {
   description = "Map of availability_zones_enabled values across all cosmosdb_cassandra_datacenters, keyed the same as var.cosmosdb_cassandra_datacenters"
   value       = { for k, v in azurerm_cosmosdb_cassandra_datacenter.cosmosdb_cassandra_datacenters : k => v.availability_zones_enabled }
